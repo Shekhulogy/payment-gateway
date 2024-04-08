@@ -1,0 +1,131 @@
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.caption {
+  width: 55%;
+  color: aliceblue;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+.caption h1 {
+  font-size: 100px;
+  font-weight: 300;
+  animation: slide-up 1s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.caption p {
+  color: rgb(171, 183, 196);
+  font-size: 25px;
+  animation: slide-up 1s ease-out;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.captionBtn {
+  height: 60px;
+  width: 190px;
+  margin-top: 60px;
+
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.1s all ease;
+  animation: slide-up 1s ease-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+  transform: translateY(100px);
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.captionBtn:hover {
+  border: none;
+}
+
+.captionBtn::before {
+  content: "";
+  height: 60px;
+  width: 190px;
+  background: linear-gradient(to right, #2edb76 5%, #34ba9f);
+  border-radius: 50px;
+  position: absolute;
+  transition: 0.5s all ease;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.captionBtn:hover:before {
+  transition: 0.5s all ease;
+  opacity: 1;
+}
+
+@media screen and (max-width: 650px) {
+  .caption {
+    width: 55%;
+  }
+
+  .caption h1 {
+    font-size: 60px;
+    line-height: 4rem;
+  }
+
+  .caption p {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .captionBtn {
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 650px) {
+  .caption {
+    width: 40%;
+    top: 40%;
+  }
+
+  .caption h1 {
+    font-size: 70px;
+    line-height: 4.5rem;
+  }
+
+  .caption p {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .captionBtn {
+    margin-top: 30px;
+    height: 50px;
+    width: 150px;
+    font-size: 14px;
+  }
+}

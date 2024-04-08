@@ -1,0 +1,110 @@
+.navbar {
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  position: absolute;
+  animation: slide-down 1s ease-out;
+  background: rgb(0, 0, 0, 0.5);
+}
+
+.navbar div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+
+.navBtn {
+  margin-right: 15%;
+  height: 50px;
+  width: 110px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-image: linear-gradient(to right, #2edb76 5%, #34ba9f);
+  overflow: hidden;
+  position: relative;
+}
+
+.navBtn::before {
+  content: "";
+  height: 50px;
+  width: 180px;
+  top: 0;
+  left: -80px;
+  background-image: linear-gradient(to right, #34ba9f, #00ff6a, #34ba9f);
+  position: absolute;
+  transition: 0.7s all ease-out;
+}
+
+.navBtn:hover:before {
+  transition: 0.7s all ease-out;
+  left: 0;
+}
+
+.navBtn::after {
+  content: "Donate";
+  height: 50px;
+  width: 110px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navbar {
+    justify-content: center;
+    height: 60px;
+  }
+
+  .navbar div {
+    margin-left: 0;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar h2 {
+    font-size: 17px;
+  }
+
+  .navBtn {
+    display: none;
+  }
+}

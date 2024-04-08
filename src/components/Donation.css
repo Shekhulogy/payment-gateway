@@ -1,0 +1,237 @@
+@keyframes zoom-in {
+  from {
+    scale: 10%;
+  }
+  to {
+    scale: 100%;
+  }
+}
+
+.donationSection {
+  width: 100%;
+  height: 100%;
+  background: rgb(05, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+}
+
+.popUp {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: rgb(05, 0, 0, 0.5);
+  position: absolute;
+  animation-name: zoom-in;
+  animation-duration: 0.3s;
+  transition: 2s ease-out;
+}
+
+.popUp img {
+  height: 180px;
+  width: 180px;
+  margin-top: 100px;
+  margin-left: 30px;
+}
+
+.popUp .wrapper {
+  width: 360px;
+  background: #fff;
+  color: slategray;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper .input-box {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 20px 45px 20px 20px;
+  font-size: 16px;
+}
+
+.input-box:focus-within input {
+  border: 1px solid #00ff6a;
+}
+
+.input-box:nth-child(4) input {
+  width: 60%;
+}
+
+.input-box:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-box input::placeholder {
+  color: #ccc;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  font-size: 20px;
+}
+
+.input-box:focus-within i {
+  color: #34ba9f;
+}
+
+.input-box:nth-child(4) i {
+  left: 130px;
+}
+
+.wrapper .btn {
+  height: 50px;
+  width: 35%;
+  font-size: 18px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-image: linear-gradient(to right, #00ff6a 7%, #34ba9f);
+  overflow: hidden;
+}
+
+.wrapper .btn::before {
+  content: "";
+  height: 50px;
+  width: 200px;
+  top: 0;
+  left: -80px;
+  background-image: linear-gradient(to right, #34ba9f, #00ff6a, #34ba9f);
+  position: absolute;
+  transition: 0.7s all ease-out;
+}
+
+.wrapper .btn:hover:before {
+  transition: 0.7s all ease-out;
+  left: 0;
+}
+
+.wrapper .btn::after {
+  content: "Donate";
+  height: 50px;
+  width: 6.5vw;
+  top: 0;
+  left: 5px;
+  position: absolute;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: rgb(05, 0, 0, 0.5);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 650px) {
+  .popUp img {
+    display: none;
+  }
+
+  .popUp {
+    width: 65%;
+  }
+
+  .popUp .wrapper {
+    padding: 20px 30px;
+  }
+
+  .wrapper .input-box {
+    height: 45px;
+    margin: 10px 0;
+  }
+
+  .wrapper .btn {
+    height: 45px;
+    width: 35%;
+    font-size: 15px;
+  }
+
+  .wrapper .btn::after {
+    height: 45px;
+    left: 22px;
+  }
+
+  .input-box:nth-child(4) i {
+    left: 90px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 650px) {
+  .popUp img {
+    width: 140px;
+    height: 140px;
+    margin-top: 80px;
+    margin-left: 25px;
+  }
+
+  .popUp {
+    width: 60%;
+  }
+
+  .wrapper .input-box {
+    height: 50px;
+    margin: 10px 0;
+  }
+
+  .input-box input {
+    font-size: 13px;
+  }
+
+  .popUp .wrapper {
+    width: 280px;
+    padding: 25px 35px;
+  }
+
+  .wrapper .btn {
+    height: 50px;
+    width: 35%;
+    font-size: 13px;
+  }
+
+  .wrapper .btn::after {
+    height: 50px;
+    left: 11px;
+  }
+
+  .input-box:nth-child(4) i {
+    left: 90px;
+  }
+}
